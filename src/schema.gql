@@ -1,0 +1,80 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input BasePaginationPayload {
+  after: String
+  first: Int
+}
+
+input CreateUserGrantPayload {
+  feedback: String!
+  grantId: Float!
+  isApproved: Boolean!
+  userId: Float!
+}
+
+input GetUserGrantsPayload {
+  after: String
+  first: Int
+  userId: Int!
+}
+
+type Grant {
+  area: [String!]!
+  averageAmount: Float!
+  deadline: String!
+  foundationName: String!
+  grantName: String!
+  id: Int!
+  isActive: Boolean!
+  location: String!
+}
+
+type GrantConnection {
+  edges: [GrantEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type GrantEdge {
+  cursor: String!
+  node: Grant!
+}
+
+type Mutation {
+  createUserGrant(input: CreateUserGrantPayload!): UserGrant!
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+}
+
+type Query {
+  getAllGrants(input: BasePaginationPayload!): GrantConnection!
+  getUserGrants(input: GetUserGrantsPayload!): UserGrantConnection!
+}
+
+type UserGrant {
+  averageAmount: Float!
+  deadline: String!
+  foundationName: String!
+  grantName: String!
+  id: Int!
+  matchDate: String
+  status: String!
+}
+
+type UserGrantConnection {
+  edges: [UserGrantEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type UserGrantEdge {
+  cursor: String!
+  node: UserGrant!
+}
