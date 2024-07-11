@@ -21,11 +21,11 @@ export class GetUserGrantsPayload extends BasePaginationPayload {
 
 @InputType()
 export class CreateUserGrantPayload {
-  @Field(() => Number)
+  @Field(() => Int)
   @IsNumber()
   grantId: number;
 
-  @Field(() => Number)
+  @Field(() => Int)
   @IsNumber()
   userId: number;
 

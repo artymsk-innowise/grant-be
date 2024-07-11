@@ -9,9 +9,9 @@ input BasePaginationPayload {
 
 input CreateUserGrantPayload {
   feedback: String!
-  grantId: Float!
+  grantId: Int!
   isApproved: Boolean!
-  userId: Float!
+  userId: Int!
 }
 
 input GetUserGrantsPayload {

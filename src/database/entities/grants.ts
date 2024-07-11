@@ -1,7 +1,6 @@
 import {
   AllowNull,
   AutoIncrement,
-  BelongsToMany,
   Column,
   CreatedAt,
   DataType,
@@ -14,7 +13,7 @@ import {
   Unique,
   UpdatedAt,
 } from 'sequelize-typescript';
-import { GrantsHistory, Statuses } from './index';
+import { GrantsHistory } from './index';
 
 @Table
 export class Grants extends Model<Grants> {
@@ -66,8 +65,8 @@ export class Grants extends Model<Grants> {
   @HasOne(() => GrantsHistory, {})
   grantsHistory: GrantsHistory;
 
-  @BelongsToMany(() => Statuses, {
-    through: { model: () => GrantsHistory },
-  })
-  status: Statuses;
+  // @BelongsToMany(() => Statuses, {
+  //   through: { model: () => GrantsHistory },
+  // })
+  // status: Statuses;
 }
