@@ -8,6 +8,7 @@
   "scripts": {
     "build": "nest build",
     "env": "cp .env.example .env",
+    "seed": "npx sequelize-cli db:seed:all",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
