@@ -16,18 +16,33 @@ $ npm run build
 
 # 2) Create docker image. 
 # This command will create a postgres, api and adminer images
-$ docker compose:up
+$ docker-compose up
+```
 
-# to restart app by npm scripts,
-# stop the api image, and run the following script
+## Application service scripts
+
+To restart an app by npm scripts,
+stop a docker api image, and run the following script
+```bash
 $ npm run start
+```
 
-# run tests
+Run tests
+```bash
 $ npm run test
+```
 
-# sequelize seeds
-# to run seeds, first set env variable FORCE_SYNC_SEQUELIZE to false
-# and then run the script
+Add data to DB.
+This script runs sequelize seeds
+```bash
+$ npm run seed
+```
+
+To refresh DB with new seeds:
+1) set env variable ```FORCE_SYNC_SEQUELIZE``` to ```true```
+2) restart an app 
+3) run seeds by running: 
+```bash
 $ npm run seed
 ```
 
